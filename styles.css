@@ -1,0 +1,913 @@
+/* Base Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* Header Styles */
+header {
+    background-color: #0a0a0a;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text h1 {
+    color: #7289da;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo-text p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.logo-image img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #7289da;
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #7289da;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #0a0a0a;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.cta-button {
+    background-color: #7289da;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #5a6ddf;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+    margin-top: 40px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Featured Section */
+.featured {
+    padding: 60px 0;
+    background-color: #1a1a1a;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.featured-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #7289da, #ffa500, #00aa66);
+}
+
+.featured-card h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.featured-card p {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    display: inline-block;
+    color: #7289da;
+    font-weight: 500;
+    position: relative;
+}
+
+.learn-more::after {
+    content: ' →';
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #7289da, #ffa500, #00aa66);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Team Section */
+.team-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-btn {
+    background-color: #2a2a2a;
+    color: #a0a0a0;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: width 0.3s;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active::before {
+    width: 100%;
+}
+
+.filter-btn.active {
+    background-color: #7289da;
+    color: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    position: relative;
+}
+
+.team-info {
+    padding: 25px;
+    position: relative;
+}
+
+.team-info h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.team-info p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.team-info .game-icon {
+    margin-right: 10px;
+    color: #7289da;
+}
+
+.team-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+}
+
+/* Tournament Section */
+.tournament-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.tournament-card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.tournament-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: #7289da;
+}
+
+.tournament-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.tournament-info {
+    padding: 25px;
+}
+
+.tournament-info h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.tournament-info .tournament-date,
+.tournament-info .prize-pool {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.tournament-info .tournament-date i,
+.tournament-info .prize-pool i {
+    margin-right: 10px;
+    color: #7289da;
+}
+
+.tournament-progress {
+    height: 8px;
+    background-color: #3a3a3a;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #7289da;
+    width: 65%; /* Example progress */
+}
+
+.teams-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.team-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.register-btn {
+    display: inline-block;
+    background-color: #7289da;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.register-btn:hover {
+    background-color: #5a6ddf;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: #7289da;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-content h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.news-content .news-date {
+    color: #a0a0a0;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.news-content p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.news-content .read-more {
+    color: #7289da;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-block;
+    position: relative;
+}
+
+.news-content .read-more::after {
+    content: ' →';
+}
+
+/* Community Section */
+.forum-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+}
+
+.forum-sidebar {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 25px;
+    height: fit-content;
+}
+
+.forum-sidebar h3 {
+    color: #7289da;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #7289da;
+    padding-bottom: 15px;
+}
+
+.forum-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.forum-categories li {
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.forum-categories li:hover,
+.forum-categories li.active {
+    background-color: #7289da;
+    color: white;
+}
+
+.forum-categories li.active::before {
+    content: '✓';
+    position: absolute;
+    right: 15px;
+    font-weight: bold;
+}
+
+.forum-content {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.forum-posts {
+    margin-bottom: 30px;
+}
+
+.forum-post {
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.forum-post:hover {
+    transform: translateY(-5px);
+}
+
+.forum-post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.forum-post-author {
+    font-weight: 600;
+    color: #7289da;
+    display: flex;
+    align-items: center;
+}
+
+.forum-post-author::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #7289da;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.forum-post-time {
+    color: #a0a0a0;
+    font-size: 0.8rem;
+}
+
+.forum-post-content {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.create-post-btn {
+    background-color: #7289da;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+}
+
+.create-post-btn:hover {
+    background-color: #5a6ddf;
+    transform: scale(1.03);
+}
+
+/* Streams Section */
+.stream-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.stream-card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.stream-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: #7289da;
+}
+
+.stream-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: fill;
+    position: relative;
+}
+
+.stream-info {
+    padding: 25px;
+}
+
+.streamer-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.streamer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: fill;
+    margin-right: 15px;
+    border: 3px solid #7289da;
+}
+
+.streamer-name h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.stream-game {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.stream-viewers {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.stream-viewers i {
+    margin-right: 10px;
+    color: #7289da;
+}
+
+.watch-btn {
+    display: inline-block;
+    background-color: #7289da;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.watch-btn:hover {
+    background-color: #5a6ddf;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0a0a0a;
+    padding: 70px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo h2 {
+    color: #7289da;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    max-width: 400px;
+}
+
+.footer-links .link-group {
+    margin-bottom: 40px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    color: #7289da;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-links h3::after,
+.footer-social h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #7289da;
+}
+
+.footer-links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-links ul li a:hover {
+    color: #7289da;
+}
+
+.footer-links ul li a::before {
+    content: '→';
+    margin-right: 10px;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+}
+
+.footer-links ul li a:hover::before {
+    opacity: 1;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    color: #a0a0a0;
+    transition: all 0.3s;
+    transform: translateY(0);
+}
+
+.social-icons a:hover {
+    background-color: #7289da;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.copyright {
+    text-align: center;
+    color: #a0a0a0;
+    font-size: 0.8rem;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a2a;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .featured-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-image {
+        margin-top: 20px;
+    }
+    
+    .forum-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid,
+    .tournament-grid,
+    .news-grid,
+    .stream-grid,
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    .team-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        margin-bottom: 10px;
+        padding: 8px 15px;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
